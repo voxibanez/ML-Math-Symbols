@@ -1,1 +1,1 @@
-GITHUB
+Machine learning project at University of Massachusetts Lowell. Using the following dataset: http://www.isical.ac.in/~crohme/CROHME_data.html, the program will generate a neural network that can distinguish handwritten numbers and various math symbols (greek letters)
