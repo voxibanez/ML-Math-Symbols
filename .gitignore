@@ -1,6 +1,7 @@
 #Data
 MNIST-data/
 ICFHR_package/
+data.rar
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
