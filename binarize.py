@@ -36,7 +36,7 @@ def image_to_binary(src, dest, threshold):
     #save the image
     imsave(dest, binary_image_array)
     
-def make_binary_array(convert_array, theshold=200)
+def make_binary_array(convert_array, threshold=200):
     """
     The purpose of this function is to convert an array of pixel values
     to a binary array based on the threshold.
@@ -60,5 +60,5 @@ def main():
     image_to_binary('test.png', 'new.png', 200)
     
     
-if __name__ == '__main'__':
+if __name__ == '__main__':
     main()
