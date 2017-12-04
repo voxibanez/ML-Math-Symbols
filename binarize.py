@@ -17,7 +17,7 @@ def image_to_binary(src, dest, threshold):
         -src (string): path to image to convert
         -dest (string): path to save the image too
         -threshold (integer): threshold value for pixels (where the white
-                                and black cutoff is)
+                                and black cut-off is)
     
     return:
         -N/A
@@ -33,7 +33,8 @@ def image_to_binary(src, dest, threshold):
     #binarize array
     binary_image_array = make_binary_array(monochrome_image, threshold)
     
-    
+    #save the image
+    imsave(dest, binary_image_array)
     
 def make_binary_array(convert_array, theshold=200)
     """
@@ -54,4 +55,10 @@ def make_binary_array(convert_array, theshold=200)
             else:
                 convert_array[i][j] = 0
     return convert_array
+
+def main():
+    image_to_binary('test.png', 'new.png', 200)
     
+    
+if __name__ == '__main'__':
+    main()
