@@ -15,6 +15,8 @@ if __name__ == "__main__":
 
 def cnn_model_fn(features, labels, mode):
 
+  target_classes = 23
+
   # Input Layer
   input_layer = tf.reshape(features["x"], [-1, 28, 28, 1])
 
@@ -45,7 +47,8 @@ def cnn_model_fn(features, labels, mode):
       inputs=dense, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
   # Logits Layer
-  logits = tf.layers.dense(inputs=dropout, units=10)
+  # 23 suitable target classes as specified by 2013 INKML dataset
+  logits = tf.layers.dense(inputs=dropout, units=target_classes)
 
   predictions = {
       # Generate predictions (for PREDICT and EVAL mode)
@@ -59,7 +62,7 @@ def cnn_model_fn(features, labels, mode):
     return tf.estimator.EstimatorSpec(mode=mode, predictions=predictions)
 
   # Calculate Loss (for both TRAIN and EVAL modes)
-  onehot_labels = tf.one_hot(indices=tf.cast(labels, tf.int32), depth=10)
+  onehot_labels = tf.one_hot(indices=tf.cast(labels, tf.int32), depth=target_classes)
   loss = tf.losses.softmax_cross_entropy(
       onehot_labels=onehot_labels, logits=logits)
 

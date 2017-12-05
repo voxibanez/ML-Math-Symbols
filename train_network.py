@@ -22,7 +22,7 @@ def start_training(folder):
         if ".inkml" in file:
             tempStr = os.path.join(folder, file)
             #Parse item takes in the filename (full path from program dir) and
-            #it takes a bool that determins whether a line should be drawn between the points given
+            #it takes a bool that determines whether a line should be drawn between the points given
             #This may or may not help the network
             data.append(parseItem(tempStr, real_point_weight, calculated_point_weight, True))
 
