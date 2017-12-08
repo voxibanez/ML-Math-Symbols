@@ -14,6 +14,11 @@ import itertools
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
+# list of applicable target classes
+targets = (['\\div', '\\pm', '[', ']', '\\log', '\\tan', '\\beta', '\\alpha', 
+            '\\int', '\\pi', ',', '\\cos', '\\sum', '\\theta', '.', '\\times',
+            '\\sin', '\\sqrt', '=', ')', '(', '+', '-'])
+
 class function:
     fullName = ""
     symbols = []
@@ -26,13 +31,20 @@ class symbol:
 
 def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, lineFilling = True):
     """generate all one inkml file per symbol. Return the number of generated files."""
-
+    
     segFunction = function()
     for seg in ink.segments.values():
         lab = seg.label
         pictureData = []
+
+        # filter based on labels
+        if lab not in targets:
+            continue
+
         if (lab == ","):
             lab = "COMMA"
+
+        #print lab
         mainArray = []
         for s in seg.strId:
             temp = []
@@ -41,9 +53,10 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
                 temp.append(a.strip().split(" "))
 
             #Convert to int
+            #i'm sorry
             for a in temp:
-                a[0] = int(a[0])
-                a[1] = int(a[1])
+                a[0] = int(str(a[0].replace('.', '')))
+                a[1] = int(str(a[1].replace('.', '')))
             mainArray.append(temp)
 
 
@@ -120,6 +133,7 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
             newArray[len(newArray) - 1 - a[1]][a[0]] = real_point_weight
 
         pictureData += [newArray]
+
         segFunction.symbols.append(symbol(lab,pictureData))
     segFunction.fullName = ink.truth
     return segFunction
