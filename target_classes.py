@@ -31,13 +31,13 @@ def gen_target_classes(training_dir, thresh):
 
     return target_list, total_samples, total_targets
 
-if len(sys.argv) == 3:
-    target_list, samples, targets = gen_target_classes(sys.argv[1], int(sys.argv[2]))
-else:
-    print('Usage: python target_classes.py training_data_directory threshold')
+#if len(sys.argv) == 3:
+ #   target_list, samples, targets = gen_target_classes(sys.argv[1], int(sys.argv[2]))
+#else:
+ #   print('Usage: python target_classes.py training_data_directory threshold')
 
-for t in target_list:
-    print t
+#for t in target_list:
+ #   print t
 
-print 'TOTAL SAMPLES: ' + str(samples)
-print 'TOTAL TARGETS: ' + str(targets)
+#print 'TOTAL SAMPLES: ' + str(samples)
+#print 'TOTAL TARGETS: ' + str(targets)
