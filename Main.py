@@ -6,7 +6,7 @@ from inkml_Interop import *
 from train_network import *
 import sys
 #parseItem("Test/dif_eqn15.inkml")
-start_training("Test")
+start_training("all")
 #if len(sys.argv) == 2:
  #   start_training(sys.argv[1])
   #  print 'Hey I actually finished training'

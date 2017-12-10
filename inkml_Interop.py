@@ -13,6 +13,11 @@ import random
 import itertools
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import os
+
+from binarize import *
+
+from scipy.misc import imsave
 
 # list of applicable target classes
 targets = (['\\div', '\\pm', '[', ']', '\\log', '\\tan', '\\beta', '\\alpha', 
@@ -29,7 +34,7 @@ class symbol:
     name = ""
     pictureData = []
 
-def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, lineFilling = True):
+def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, cntr, lineFilling = True):
     """generate all one inkml file per symbol. Return the number of generated files."""
     
     segFunction = function()
@@ -41,6 +46,7 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
         if lab not in targets:
             continue
 
+        lab_idx = targets.index(lab)
         if (lab == ","):
             lab = "COMMA"
 
@@ -109,11 +115,15 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
             a[1] = ymax - a[1]
 
         #DEBUG plots of the array of coordinates before its converted into an array of pixels
+        '''
         plt.cla()
         colors = itertools.cycle(["r", "b", "g"])
         plt.title("Symbol: " + lab)
-        plt.scatter(*zip(*extraPoints), color=next(colors))
+        #plt.scatter(*zip(*extraPoints), color=next(colors))
         plt.scatter(*zip(*mainArray2))
+        plt.show()
+        '''
+        #imsave('tester.jpg', zip(*mainArray2))
         print('hello')
 
         #Change from coordinates of black to grid of pixel on or off
@@ -133,23 +143,24 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
             newArray[len(newArray) - 1 - a[1]][a[0]] = real_point_weight
 
         pictureData += [newArray]
+        imsave('tester.jpg', newArray)
+    
+        imsave('new_train/' + str(lab_idx) + '/' + str(cntr) + '.jpg', image_to_binary('tester.jpg', 'tester2.jpg', 200))
 
         segFunction.symbols.append(symbol(lab,pictureData))
     segFunction.fullName = ink.truth
     return segFunction
 
-def parseItem(item, real, calculated, fillLine):
+def parseItem(item, real, calculated, cntr, fillLine):
     nb = 0
 
     try:
         f = Inkml(item.strip())
-        nb = generateRightSeg(f, item, real, calculated, fillLine)
+        nb = generateRightSeg(f, item, real, calculated, cntr, fillLine)
 
     except IOError:
-        print
-        "Can not open " + item.strip()
+        print "Can not open " + item.strip()
     except ET.ParseError:
-        print
-        "Inkml Parse error " + item.strip()
+        print "Inkml Parse error " + item.strip()
 
     return nb

@@ -16,7 +16,7 @@ def start_training(folder):
     #Real Point Weight (0-1) - The weight of the actual given points from the dataset
     real_point_weight = 1.0
     #Calculated Point Weight (0-1) - The weight of the interpolation points between 2 points (not given by the dataset)
-    calculated_point_weight = 0.5
+    calculated_point_weight = 1.0
 
     #Load training data
     #Data is an array of function objects, which have 2 paremeters
@@ -25,13 +25,16 @@ def start_training(folder):
     #name of the segment and
     #the array of pixels that make up the image of that segment
     data = []
+    i = 0
     for file in os.listdir(folder):
         if ".inkml" in file:
             tempStr = os.path.join(folder, file)
             #Parse item takes in the filename (full path from program dir) and
             #it takes a bool that determines whether a line should be drawn between the points given
             #This may or may not help the network
-            data.append(parseItem(tempStr, real_point_weight, calculated_point_weight, True))
+            data.append(parseItem(tempStr, real_point_weight, calculated_point_weight, i, True))
+            i += 1
+
     target_list = []
     target_list = gen_target_classes(folder, 0)[0]
     picture_data = []

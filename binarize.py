@@ -69,9 +69,9 @@ def make_binary_array(convert_array, threshold=200):
     for i in range(len(convert_array)):
         for j in range(len(convert_array[0])):
             if convert_array[i][j] > threshold:
-                convert_array[i][j] = 255
-            else:
                 convert_array[i][j] = 0
+            else:
+                convert_array[i][j] = 255
     return convert_array
 
 
