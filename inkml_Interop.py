@@ -109,12 +109,12 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, li
             a[1] = ymax - a[1]
 
         #DEBUG plots of the array of coordinates before its converted into an array of pixels
-        #plt.cla()
-        #colors = itertools.cycle(["r", "b", "g"])
-        #plt.title("Symbol: " + lab)
-        #plt.scatter(*zip(*extraPoints), color=next(colors))
-        #plt.scatter(*zip(*mainArray2))
-
+        plt.cla()
+        colors = itertools.cycle(["r", "b", "g"])
+        plt.title("Symbol: " + lab)
+        plt.scatter(*zip(*extraPoints), color=next(colors))
+        plt.scatter(*zip(*mainArray2))
+        print('hello')
 
         #Change from coordinates of black to grid of pixel on or off
         xmax = -sys.maxint - 1
