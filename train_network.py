@@ -47,9 +47,9 @@ def start_training(folder):
                     class_data.append(i)
                     
     print("Size of:")
-    print("- Training-set:\t\t{}".format(len(data.train.labels)))
-    print("- Test-set:\t\t{}".format(len(data.test.labels)))
-    print("- Validation-set:\t{}".format(len(data.validation.labels)))
+    #print("- Training-set:\t\t{}".format(len(data.train.labels)))
+    #print("- Test-set:\t\t{}".format(len(data.test.labels)))
+    #print("- Validation-set:\t{}".format(len(data.validation.labels)))
     neuralNet = neural_net(picture_data, class_data, len(target_list))
 
 class neural_net:

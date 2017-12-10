@@ -124,7 +124,7 @@ def generateRightSeg(ink, segName,real_point_weight, calculated_point_weight, cn
         plt.show()
         '''
         #imsave('tester.jpg', zip(*mainArray2))
-        print('hello')
+        #print('hello')
 
         #Change from coordinates of black to grid of pixel on or off
         xmax = -sys.maxint - 1
