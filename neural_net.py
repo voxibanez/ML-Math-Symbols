@@ -10,16 +10,20 @@ import mnist
 
 
 # Convolutional Layer 1.
-filter_size1 = 5          # Convolution filters are 5 x 5 pixels.
+filter_size1 = 4          # Convolution filters are 5 x 5 pixels.
 num_filters1 = 16         # There are 16 of these filters.
 
 # Convolutional Layer 2.
-filter_size2 = 5          # Convolution filters are 5 x 5 pixels.
-num_filters2 = 36         # There are 36 of these filters.
+filter_size2 = 4          # Convolution filters are 5 x 5 pixels.
+num_filters2 = 32         # There are 36 of these filters.
 
 # Fully-connected layer.
 fc_size = 128             # Number of neurons in fully-connected layer.
 
+categories = []
+categoriesFilePath = "DataSet/categories.txt"
+with open(categoriesFilePath) as file:
+    categories = [l.strip() for l in file]
 
 data = mnist.read_data_sets('data/MNIST/', one_hot=True, validation_size=600)
 #data = sklearn.datasets.load_files('data/MNIST/', shuffle="False")
@@ -249,15 +253,15 @@ train_batch_size = 64
 # Counter for total number of iterations performed so far.
 total_iterations = 0
 
-def optimize(num_iterations):
+def optimize():
     # Ensure we update the global variable rather than a local copy.
     global total_iterations
 
     # Start-time used for printing time-usage below.
     start_time = time.time()
-
-    for i in range(total_iterations,
-                   total_iterations + num_iterations):
+    acc = 0
+    i = 0.0
+    while acc < 1:
 
         # Get a batch of training examples.
         # x_batch now holds a batch of images and
@@ -280,14 +284,16 @@ def optimize(num_iterations):
             acc = session.run(accuracy, feed_dict=feed_dict_train)
 
             # Message for printing.
-            msg = "Optimization Iteration: {0:>6}, Training Accuracy: {1:>6.1%}"
+            msg = "Iteration: {0:>6}, Training Accuracy: {1:>6.1%}"
 
             # Print it.
-            print(msg.format(i + 1, acc))
+            print(msg.format(total_iterations + 1, acc))
 
-    # Update the total number of iterations performed.
-    total_iterations += num_iterations
-
+        # Update the total number of iterations performed.
+        total_iterations += 1
+        i = i + 1
+    msg = "Iteration: {0:>6}, Training Accuracy: {1:>6.1%}"
+    print(msg.format(total_iterations + 1, acc))
     # Ending time.
     end_time = time.time()
 
@@ -295,7 +301,7 @@ def optimize(num_iterations):
     time_dif = end_time - start_time
 
     # Print the time-usage.
-    print("Time usage: " + str(timedelta(seconds=int(round(time_dif)))))
+    print("Time: " + str(timedelta(seconds=int(round(time_dif)))))
 
 
 def plot_example(cls_pred, correct):
@@ -320,10 +326,13 @@ def plot_example(cls_pred, correct):
     # Get the true classes for those images.
     cls_true = data.test.cls[correct]
 
+    true_map = [categories[i] for i in cls_true]
+    pred_map = [categories[i] for i in cls_pred]
+
     # Plot the first 9 images.
     plot_images(images=images[0:9],
-                cls_true=cls_true[0:9],
-                cls_pred=cls_pred[0:9])
+                cls_true=true_map[0:9],
+                cls_pred=pred_map[0:9])
 
 def plot_example_errors(cls_pred, correct):
     # This function is called from print_test_accuracy() below.
@@ -456,5 +465,5 @@ def print_test_accuracy(show_example_errors=False,
         print("Confusion Matrix:")
         plot_confusion_matrix(cls_pred=cls_pred)
 
-optimize(num_iterations=3000) # We already performed 1 iteration above.
+optimize() # We already performed 1 iteration above.
 print_test_accuracy(show_example_errors=False)

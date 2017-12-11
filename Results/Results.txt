@@ -1,32 +1,27 @@
-Optimization Iteration:      1, Training Accuracy:   4.7%
-Optimization Iteration:    101, Training Accuracy:  31.2%
-Optimization Iteration:    201, Training Accuracy:  68.8%
-Optimization Iteration:    301, Training Accuracy:  84.4%
-Optimization Iteration:    401, Training Accuracy:  81.2%
-Optimization Iteration:    501, Training Accuracy:  82.8%
-Optimization Iteration:    601, Training Accuracy:  87.5%
-Optimization Iteration:    701, Training Accuracy:  87.5%
-Optimization Iteration:    801, Training Accuracy:  87.5%
-Optimization Iteration:    901, Training Accuracy:  87.5%
-Optimization Iteration:   1001, Training Accuracy:  87.5%
-Optimization Iteration:   1101, Training Accuracy:  90.6%
-Optimization Iteration:   1201, Training Accuracy:  92.2%
-Optimization Iteration:   1301, Training Accuracy:  93.8%
-Optimization Iteration:   1401, Training Accuracy:  95.3%
-Optimization Iteration:   1501, Training Accuracy:  96.9%
-Optimization Iteration:   1601, Training Accuracy: 100.0%
-Optimization Iteration:   1701, Training Accuracy:  95.3%
-Optimization Iteration:   1801, Training Accuracy:  98.4%
-Optimization Iteration:   1901, Training Accuracy:  98.4%
-Optimization Iteration:   2001, Training Accuracy:  92.2%
-Optimization Iteration:   2101, Training Accuracy:  95.3%
-Optimization Iteration:   2201, Training Accuracy:  98.4%
-Optimization Iteration:   2301, Training Accuracy:  96.9%
-Optimization Iteration:   2401, Training Accuracy:  95.3%
-Optimization Iteration:   2501, Training Accuracy:  98.4%
-Optimization Iteration:   2601, Training Accuracy: 100.0%
-Optimization Iteration:   2701, Training Accuracy:  95.3%
-Optimization Iteration:   2801, Training Accuracy:  95.3%
-Optimization Iteration:   2901, Training Accuracy:  96.9%
-Time usage: 0:02:23
-Accuracy on Test-Set: 95.9% (16076 / 16771)
+Iteration:      1, Training Accuracy:   0.0%
+Iteration:    101, Training Accuracy:  45.3%
+Iteration:    201, Training Accuracy:  37.5%
+Iteration:    301, Training Accuracy:  39.1%
+Iteration:    401, Training Accuracy:  67.2%
+Iteration:    501, Training Accuracy:  71.9%
+Iteration:    601, Training Accuracy:  82.8%
+Iteration:    701, Training Accuracy:  76.6%
+Iteration:    801, Training Accuracy:  81.2%
+Iteration:    901, Training Accuracy:  89.1%
+Iteration:   1001, Training Accuracy:  89.1%
+Iteration:   1101, Training Accuracy:  90.6%
+Iteration:   1201, Training Accuracy:  92.2%
+Iteration:   1301, Training Accuracy:  92.2%
+Iteration:   1401, Training Accuracy:  87.5%
+Iteration:   1501, Training Accuracy:  96.9%
+Iteration:   1601, Training Accuracy:  95.3%
+Iteration:   1701, Training Accuracy:  90.6%
+Iteration:   1801, Training Accuracy:  92.2%
+Iteration:   1901, Training Accuracy:  98.4%
+Iteration:   2001, Training Accuracy:  96.9%
+Iteration:   2101, Training Accuracy:  95.3%
+Iteration:   2201, Training Accuracy:  93.8%
+Iteration:   2301, Training Accuracy: 100.0%
+Iteration:   2302, Training Accuracy: 100.0%
+Time: 0:01:10
+Accuracy on Test-Set: 93.7% (15709 / 16771)

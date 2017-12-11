@@ -1,0 +1,10 @@
++
+-
+=
+div
+gamma
+infty
+pi
+sigma
+theta
+times
