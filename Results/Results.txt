@@ -24,4 +24,4 @@ Iteration:   2201, Training Accuracy:  93.8%
 Iteration:   2301, Training Accuracy: 100.0%
 Iteration:   2302, Training Accuracy: 100.0%
 Time: 0:01:10
-Accuracy on Test-Set: 93.7% (15709 / 16771)
+Accuracy on Test-Set: 95.9% (16083 / 16771)
