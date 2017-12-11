@@ -170,6 +170,10 @@ class neural_net:
         
         train_batch_size = 64
 
+        optimize(101)
+
+
+
 class image:
     def __init__(self,name,pictureData):
         self.name = name

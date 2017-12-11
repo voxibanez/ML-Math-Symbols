@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ca9424-aaf5-4eff-b1e3-69c67b5a1c7d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GITHUB.iml" afterPath="$PROJECT_DIR$/.idea/GITHUB.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data/MNIST/test-images-idx3-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/MNIST/test-labels-idx1-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/MNIST/train-images-idx3-ubyte.gz" afterPath="$PROJECT_DIR$/data/MNIST/train-images-idx3-ubyte.gz" />
-      <change beforePath="$PROJECT_DIR$/data/MNIST/train-labels-idx1-ubyte.gz" afterPath="$PROJECT_DIR$/data/MNIST/train-labels-idx1-ubyte.gz" />
+      <change beforePath="$PROJECT_DIR$/train_network.py" afterPath="$PROJECT_DIR$/train_network.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +61,8 @@
       <file leaf-file-name="train_network.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="157">
+              <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -114,9 +109,9 @@
         <option value="$PROJECT_DIR$/neural_network.py" />
         <option value="$PROJECT_DIR$/target_classes.py" />
         <option value="$PROJECT_DIR$/gen_dirs.py" />
-        <option value="$PROJECT_DIR$/train_network.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/inkml_Interop.py" />
+        <option value="$PROJECT_DIR$/train_network.py" />
       </list>
     </option>
   </component>
@@ -276,6 +271,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="959" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18214285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -305,13 +301,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/train_network.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="71" />
+          <line>172</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -321,7 +312,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="72" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -765,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/train_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="157">
+          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
