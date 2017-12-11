@@ -6,12 +6,14 @@ from datetime import timedelta
 import math
 import os
 import sys
+import input_data
 
 #from sklearn.metrics import confusion_matrix
-from inkml_Interop import *
+#from inkml_Interop import *
 from target_classes import *
 
 def start_training(folder):
+    '''
     #Some constants
     #Real Point Weight (0-1) - The weight of the actual given points from the dataset
     real_point_weight = 1.0
@@ -50,7 +52,9 @@ def start_training(folder):
     #print("- Training-set:\t\t{}".format(len(data.train.labels)))
     #print("- Test-set:\t\t{}".format(len(data.test.labels)))
     #print("- Validation-set:\t{}".format(len(data.validation.labels)))
-    neuralNet = neural_net(picture_data, class_data, len(target_list))
+    '''
+    data = input_data.read_data_sets('data/MNIST', one_hot=True)
+    neuralNet = neural_net(data, 23)
 
 class neural_net:
     #set up neural network
@@ -82,10 +86,10 @@ class neural_net:
     picture_data = []
     class_data = []
 
-    def __init__(self, pictureData, classData, classNum):
+    def __init__(self, data, classNum):
         num_classes = classNum
-        picture_data = pictureData
-        class_data = classData
+        #picture_data = pictureData
+        #class_data = classData
 
         #Load Neural Network
         #mnist = tf.contrib.learn.datasets.load_dataset("mnist")
